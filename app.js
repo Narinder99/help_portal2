@@ -1,3 +1,7 @@
+import https from 'http'
+const  http=https
+const hostname='0.0.0.0';
+
 import pkg from 'express';
 const express = pkg;
 import fsi from 'fs';
@@ -11,6 +15,19 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 3000;
+
+//remove code from  here
+const server=http.createServer((req,res) => {
+    res.statusCode=200;
+    res.setHeader('Content-Type','text/plain');
+    res.end('Zeet Node');
+});
+
+server.listen(port,hostname,()=> {
+    console.log("server runnning");
+})
+// till here
+
 import mongoosei from 'mongoose';
 const mongoose=mongoosei
 import {mongoUrl} from './string.js'
@@ -67,3 +84,4 @@ app.get('/verification',(req,res)=>{
 app.listen(port,()=>{
     console.log(`Application is running on a ${port}`);
 })
+
