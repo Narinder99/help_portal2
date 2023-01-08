@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap');
+/* @import url('https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css'); Tag close icon */
+/* @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css'); */
+@import url('https://css.gg/close.css');
+
+:root {
+    --primaryColor: rgb(19, 11, 77);
+    --input-text-color: rgb(67, 67, 67);
+    --textBackground: rgb(249, 249, 249);
+}
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Radio Canada', sans-serif;
+}
+
+h1 {
+    background-color: var(--primaryColor);
+    margin-top: 0px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    padding-top: 20px;
+
+}
+
+p {
+    margin: 40px 0px;
+    padding: 0px 20px;
+    font-size: 18px;
+
+}
+
+/*  radio button usage*/
+.usageType {
+    display: flex;
+    height: 30px;
+    width: 250px;
+    align-items: center;
+    justify-content: start;
+    border-radius: 5px;
+    padding: 0px 15px;
+    padding-top: 20px;
+}
+
+.usageType .option {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 10px;
+    border: 2px solid lightgrey;
+    transition: all 0.3s ease;
+}
+
+.usageType .option .dot {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+}
+
+.usageType .option .dot::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: var(--primaryColor);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#areaWise:checked:checked~.areaWise,
+#departmentWise:checked:checked~.departmentWise {
+    border-color: var(--primaryColor);
+    background: var(--primaryColor);
+}
+
+#other:checked:checked~.other {
+    border-color: var(--primaryColor);
+    background: var(--primaryColor);
+}
+
+#areaWise:checked:checked~.areaWise .dot,
+#departmentWise:checked:checked~.departmentWise .dot {
+    background: #fff;
+}
+
+#other:checked:checked~.other .dot {
+    background: #fff;
+}
+
+#areaWise:checked:checked~.areaWise .dot::before,
+#departmentWise:checked:checked~.departmentWise .dot::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#other:checked:checked~.other .dot::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.usageType .option span {
+    font-size: 16px;
+    padding-left: 5px;
+    color: var(--input-text-color);
+}
+
+#areaWise:checked:checked~.areaWise span,
+#departmentWise:checked:checked~.departmentWise span {
+    color: #fff;
+}
+
+#other:checked:checked~.other span {
+    color: #fff;
+}
+
+.inputTextDiv {
+    margin: 20px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputTextSpan {
+    border: 1px solid black;
+    overflow: auto;
+    width: -webkit-fill-available;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 7px;
+    background-color: var(--textBackground);
+    margin-top: 5px;
+}
+
+/* usage radio button ends*/
+
+.dropdown {
+    margin-top: 20px;
+    display: flex;
+    padding: 0px 20px;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.dropdown label {
+    font-size: 20px;
+}
+
+.dropdown select {
+    margin-top: 5px;
+    font-size: 16px;
+    color: var(--input-text-color);
+    background-color: var(--textBackground);
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.pincodeTxt {
+    margin-top: 20px;
+    display: flex;
+    padding: 0px 20px;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.pincodeTxt label {
+    font-size: 20px;
+}
+
+.pincodeTxt input {
+    margin-top: 5px;
+    font-size: 16px;
+    padding: 3px;
+    color: var(--input-text-color);
+    background-color: var(--textBackground);
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+#departmentInfo:empty::before {
+    content: 'Department Info';
+    color: rgb(117 117 117);
+}
+
+/*  radio button feedback and problem */
+.answerType {
+    display: inline-flex;
+    height: 30px;
+    width: 250px;
+    margin: auto;
+    align-items: center;
+    justify-content: start;
+    border-radius: 5px;
+    padding: 0px 15px;
+    padding-top: 20px;
+}
+
+.answerType .option {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 10px;
+    border: 2px solid lightgrey;
+    transition: all 0.3s ease;
+}
+
+.answerType .option .dot {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+}
+
+.answerType .option .dot::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: var(--primaryColor);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#feedback:checked:checked~.feedback,
+#problem:checked:checked~.problem {
+    border-color: var(--primaryColor);
+    background: var(--primaryColor);
+}
+
+#feedback:checked:checked~.feedback .dot,
+#problem:checked:checked~.problem .dot {
+    background: #fff;
+}
+
+#feedback:checked:checked~.feedback .dot::before,
+#problem:checked:checked~.problem .dot::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.answerType .option span {
+    font-size: 16px;
+    padding-left: 5px;
+    color: var(--input-text-color);
+}
+
+#feedback:checked:checked~.feedback span,
+#problem:checked:checked~.problem span {
+    color: #fff;
+}
+
+/* end radio button*/
+
+#feedbackProblem:empty::before {
+    content: 'Your Feedback/Problem';
+    color: rgb(117 117 117);
+}
+
+#feedbackProblem {
+    min-height: 100px;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.tag-container {
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 80%;
+    margin: auto;
+    background-color: var(--textBackground);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 6px 10px;
+}
+
+.tag-container .tag {
+    margin: 5px;
+    max-width: -webkit-fill-available;
+    text-overflow: ellipsis;
+    padding: 5px 6px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    color: #333;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 1px 1px #fff;
+    cursor: default;
+}
+
+.tag i {
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    margin-left: 5px;
+
+}
+
+.tag-container input {
+    font-size: 16px;
+    border: 0;
+    background-color: var(--textBackground);
+    padding: 6px 0px;
+    text-overflow: ellipsis;
+    outline: none;
+    color: var(--input-text-color);
+    flex: 1;
+}
+
+.tag-container span {
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+.button {
+    border-radius: 10px;
+    background-color: rgb(16, 27, 67);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.button:active {
+    box-shadow: 0 0 0 0 rgb(158, 9, 9);
+    opacity: 1;
+    transition: 0s;
+    padding: 12px 24px;
+    border-radius: 11px;
+}
+
+/* Custom Dialog */
+#customDialog {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0vh;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.315);
+    color: #FFF;
+    z-index: 5;
+}
+#customDialogObject{
+    display: flex;
+    height: 100vh;
+    width: 70%;
+    overflow: hidden;
+    left: 0px;
+    right: 0px;
+    margin: 15vh auto;
+}

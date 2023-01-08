@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Help Portal</title>
+  <link type="text/css" rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <h1>Local Help Portal</h1>
+  <p> This is an unoffical site. It does't operate by any Government authoritie.This site is for the people who
+    wants give the feedback to the Government work and we are trying to help them ..</p>
+
+  <div class="radioBtn usageType">
+    <input type="radio" name="select" id="areaWise" value="area" checked>
+    <input type="radio" name="select" id="departmentWise" value="department">
+    <input type="radio" name="select" id="other" value="other">
+
+    <label for="areaWise" class="option areaWise">
+      <div class="dot"></div>
+      <span>Place</span>
+    </label>
+    <label for="departmentWise" class="option departmentWise">
+      <div class="dot"></div>
+      <span>Department</span>
+    </label>
+    <label for="other" class="option other">
+      <div class="dot"></div>
+      <span>Other</span>
+    </label>
+  </div>
+
+
+  <div id='areaWiseDiv'>
+    <div class="dropdown"><label for="states">State:</label>
+      <select name="state" id="state">
+        <option value="none" selected>Choose state</option>
+      </select>
+    </div>
+
+    <div class="dropdown"><label for="district">District:</label>
+      <select name="district" id="district">
+        <option value="none" selected>Choose district</option>
+      </select>
+    </div>
+
+    <div class="dropdown"><label for="sub_district">Sub-District:</label>
+      <select name="sub-district" id="sub_district">
+        <option value="none" selected>Choose sub-district</option>
+      </select>
+    </div>
+
+    <div class="dropdown"><label for="town/village">Town/Village:</label>
+      <select name="village" id="village">
+        <option value="none" selected>Choose town/village</option>
+      </select>
+    </div>
+
+    <div class="pincodeTxt">
+      <label for="pincode">PinCode:</label>
+      <input type="number" id="pincode" name="pincode">
+    </div>
+
+  </div>
+
+
+  <div id="departmentWiseDiv">
+    <div class="dropdown"><label for="Ministries">Ministries:</label>
+      <select name="state" id="ministries">
+        <option value="none" selected>Choose ministry</option>
+      </select>
+    </div>
+
+    <div class="dropdown"><label for="area">Area:</label>
+      <select name="area" id="area">
+        <option value="India" selected>India</option>
+      </select>
+    </div>
+
+    <div class="inputTextDiv">
+      <label for="departmentInfo">Department Info:</label>
+        <span  class ="inputTextSpan" contenteditable="true" id="departmentInfo"></span>
+    </div>
+  </div>
+
+
+  <div class="radioBtn answerType">
+    <input type="radio" name="select1" id="problem" checked>
+    <input type="radio" name="select1" id="feedback">
+
+    <label for="problem" class="option problem">
+      <div class="dot"></div>
+      <span>Problem</span>
+    </label>
+    <label for="feedback" class="option feedback">
+      <div class="dot"></div>
+      <span>Feedback</span>
+    </label>
+  </div>
+
+
+  <div class="inputTextDiv">
+      <span  class ="inputTextSpan"  contenteditable="true" id="feedbackProblem"></span>
+  </div>
+</div>
+
+
+  <div class="container" id="tagsDiv">
+    <div class="tag-container">
+      <input />
+    </div>
+
+  </div>
+
+
+  <button id="submitBtn" class="button" type="button">
+    Submit</button>
+
+    <div id="customDialog"></div>
+</body>
+
+
+<script type="module" src="/js/index.js"></script>
+<script type="module" src="/js/verification.js"></script>
+
+</html>
