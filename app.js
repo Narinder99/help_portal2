@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3002;
+const port = 3000;
 import mongoosei from 'mongoose';
 const mongoose=mongoosei
 import {mongoUrl} from './string.js'
