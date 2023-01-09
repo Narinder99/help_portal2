@@ -385,7 +385,7 @@ function dataSubmited(url, id) {
     clearForm()
     console.log(data.id)
     document.getElementById('customDialog').style.display = "flex"
-    document.getElementById('customDialog').innerHTML = '<object  id="customDialogObject" type="text/html" data="http://localhost:800/verification"/>'
+    document.getElementById('customDialog').innerHTML = '<object  id="customDialogObject" type="text/html" data="https://help-portal2-4gik-main-vplgaqghsq-wm.a.run.app/verification"/>'
 }
 
 function clearForm() {
