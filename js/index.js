@@ -50,6 +50,7 @@ let feedbackProblemSelected = "Problem"
 window.onload = function () {
     document.getElementById("departmentWiseDiv").style.display = "none"
 };
+
 function HitDropDownStateListApi() {
    dropDownListId = "state"
    console.log("state api working")
