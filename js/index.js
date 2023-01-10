@@ -214,8 +214,7 @@ function updateUrl() {
 function areaPageLoad() {
     usageType = "Place"
     document.getElementById("areaWiseDiv").style.display = "block"
-    document.getElementById("departmentWiseDiv").style.display = "none"
-
+    document.getElementById("departmentWiseDiv").style.display = "none" 
 }
 
 function departmentPageLoad() {
@@ -320,7 +319,9 @@ function submitFeedbackProblem() {
             }
             break;
         case "Department":
-
+            dropDownListId = "ministries";
+            let dropdownList = document.getElementById(dropDownListId)
+            ministrySelected = dropdownList.value
             if (emptyCheckField(ministrySelected, "Ministry")) { }
             else if (emptyCheckField(areaSelected, "Area")) { }
             else if (document.getElementById('departmentInfo').innerHTML.replace(/&nbsp;/g, '').length <= 0) {
@@ -331,9 +332,7 @@ function submitFeedbackProblem() {
                 window.alert(`Please Input ${remainingChar} Char more`)
             }
             else {
-                dropDownListId = "ministries";
-                let dropdownList = document.getElementById(dropDownListId)
-                ministrySelected = dropdownList.value
+
                 let data = {
                     "ministries": ministrySelected,
                     "area": areaSelected,
