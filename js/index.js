@@ -331,6 +331,9 @@ function submitFeedbackProblem() {
                 window.alert(`Please Input ${remainingChar} Char more`)
             }
             else {
+                dropDownListId = "ministries";
+                let dropdownList = document.getElementById(dropDownListId)
+                ministrySelected = dropdownList.value
                 let data = {
                     "ministries": ministrySelected,
                     "area": areaSelected,
