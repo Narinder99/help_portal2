@@ -2,7 +2,7 @@ import { hitSearchApi, hitGetApi, submitDataApi } from './apiCall.js';
 import { areaApiUrl, departmentNamesApiUrl, areaWiseDataStoreUrl, departmentWiseDataStoreUrl, otherDataStoreUrl } from '../string.js';
 
 // area click listener
-document.getElementById('state').addEventListener('click', HitDropDownStateListApi)
+document.querySelector('#state').addEventListener('click', HitDropDownStateListApi)
 document.querySelector('#district').addEventListener('click', HitDropDownDistrictListApi)
 document.querySelector('#sub_district').addEventListener('click', HitDropDownSubDistrictListApi)
 document.querySelector('#village').addEventListener('click', HitDropDownVillageListApi)
@@ -52,8 +52,8 @@ window.onload = function () {
 };
 
 function HitDropDownStateListApi() {
-    dropDownListId = "state"
-    console.log("state api working")
+   dropDownListId = "state"
+   console.log("state api working")
     // clear below list
     districtSelected = "none"
     subDistrictSelected = "none"
@@ -70,7 +70,7 @@ function HitDropDownStateListApi() {
 
 function HitDropDownDistrictListApi() {
     // store selected data
-    stateSelected = getDataFromField("state")
+    stateSelected=getDataFromField("state")
 
     dropDownListId = "district";
     //clear below list
@@ -87,7 +87,7 @@ function HitDropDownDistrictListApi() {
 
 function HitDropDownSubDistrictListApi() {
     // store selected data
-    districtSelected = getDataFromField("district")
+    districtSelected=getDataFromField("district")
 
     dropDownListId = "sub_district";
     // clear below list
@@ -102,7 +102,7 @@ function HitDropDownSubDistrictListApi() {
 
 function HitDropDownVillageListApi() {
     // store selected data
-    subDistrictSelected = getDataFromField("sub_district")
+    subDistrictSelected=getDataFromField("sub_district")
 
     dropDownListId = "village";
     let dropdownList = document.getElementById(dropDownListId)
@@ -141,9 +141,9 @@ function HitDropDownAreaListApi() {
 }
 
 function LoadDropdownList(data) {
-    // console.log(JSON.stringify(data))
+   // console.log(JSON.stringify(data))
     let dropdownList = document.getElementById(dropDownListId)
-    console.log(dropdownList.options)
+console.log(dropdownList+"       "+dropDownListId)
     dropdownList.length = 0
 
     let defaultOption = document.createElement("option");
@@ -201,12 +201,12 @@ function LoadDropdownList(data) {
             break;
     }
     array.sort();
-    let arr1 = []
+    dropdownList.length = array.size()
     for (let i = 0; i < array.length; i++) {
         let option = document.createElement('option');
         option.text = array[i];
         option.value = array[i];
-        document.getElementById(dropDownListId).appendChild(option);
+        dropdownList.add(option);
     }
 
 }
@@ -224,7 +224,7 @@ function updateUrl() {
 function areaPageLoad() {
     usageType = "Place"
     document.getElementById("areaWiseDiv").style.display = "block"
-    document.getElementById("departmentWiseDiv").style.display = "none"
+    document.getElementById("departmentWiseDiv").style.display = "none" 
 }
 
 function departmentPageLoad() {
@@ -302,7 +302,7 @@ function submitFeedbackProblem() {
     switch (usageType) {
         case "Place":
             // store selected data
-            villageSelected = getDataFromField("village")
+            villageSelected=getDataFromField("village")
 
             if (emptyCheckField(stateSelected, "State")) { }
             else if (emptyCheckField(districtSelected, "District")) { }
@@ -332,7 +332,7 @@ function submitFeedbackProblem() {
             break;
         case "Department":
             // store selected data
-            ministrySelected = getDataFromField("ministries")
+            ministrySelected=getDataFromField("ministries")
 
             if (emptyCheckField(ministrySelected, "Ministry")) { }
             else if (emptyCheckField(areaSelected, "Area")) { }
@@ -407,7 +407,7 @@ function clearForm() {
     clearTags()
 }
 
-function getDataFromField(data) {
+function getDataFromField(data){
     let dropdownList = document.getElementById(data)
     return dropdownList.value
 }
