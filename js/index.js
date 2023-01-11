@@ -157,6 +157,8 @@ function LoadDropdownList(data) {
     }
 
     dropdownList.add(defaultOption);
+    dropdownList.add(defaultOption);
+
     dropdownList.selectedIndex = 0;
     let array = [];
 
@@ -201,8 +203,8 @@ function LoadDropdownList(data) {
             break;
     }
     array.sort();
-    console.log("size"+array.length)
-    dropdownList.length = array.length
+    //console.log("size"+array.length)
+    //dropdownList.length = array.length
     for (let i = 0; i < array.length; i++) {
         let option = document.createElement('option');
         option.text = array[i];
