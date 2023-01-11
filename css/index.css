@@ -326,7 +326,7 @@ input[type="radio"] {
     display: flex;
     align-items: center;
     color: #fff;
-    box-shadow: -1px 3px 4px rgb(0 0 0 / 36%), inset 0 1px 1px #fff;
+    box-shadow: -1px 2px 3px 1px rgb(0 0 0 / 36%), inset 0px 0px 0px #fff;
     cursor: default;
 }
 
