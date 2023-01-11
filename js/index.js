@@ -156,8 +156,8 @@ function LoadDropdownList(data) {
         defaultOption.value = "none"
     }
 
-    //dropdownList.add(defaultOption);
-    //dropdownList.selectedIndex = 0;
+    dropdownList.add(defaultOption);
+    dropdownList.selectedIndex = 0;
     let array = [];
 
     switch (dropDownListId) {
