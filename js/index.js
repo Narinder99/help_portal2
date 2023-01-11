@@ -2,7 +2,7 @@ import { hitSearchApi, hitGetApi, submitDataApi } from './apiCall.js';
 import { areaApiUrl, departmentNamesApiUrl, areaWiseDataStoreUrl, departmentWiseDataStoreUrl, otherDataStoreUrl } from '../string.js';
 
 // area click listener
-document.querySelector('#state').addEventListener('click', HitDropDownStateListApi)
+document.getElementById('state').addEventListener('click', HitDropDownStateListApi)
 document.querySelector('#district').addEventListener('click', HitDropDownDistrictListApi)
 document.querySelector('#sub_district').addEventListener('click', HitDropDownSubDistrictListApi)
 document.querySelector('#village').addEventListener('click', HitDropDownVillageListApi)
