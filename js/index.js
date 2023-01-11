@@ -69,6 +69,9 @@ function HitDropDownStateListApi() {
 }
 
 function HitDropDownDistrictListApi() {
+    // store selected data
+    stateSelected=getDataFromField("state")
+
     dropDownListId = "district";
     //clear below list
     subDistrictSelected = "none"
@@ -83,6 +86,9 @@ function HitDropDownDistrictListApi() {
 }
 
 function HitDropDownSubDistrictListApi() {
+    // store selected data
+    districtSelected=getDataFromField("district")
+
     dropDownListId = "sub_district";
     // clear below list
     villageSelected = "none"
@@ -95,6 +101,9 @@ function HitDropDownSubDistrictListApi() {
 }
 
 function HitDropDownVillageListApi() {
+    // store selected data
+    subDistrictSelected=getDataFromField("sub_district")
+
     dropDownListId = "village";
     let dropdownList = document.getElementById(dropDownListId)
     villageSelected = dropdownList.value
@@ -291,6 +300,8 @@ document.addEventListener('click', (e) => {
 function submitFeedbackProblem() {
     switch (usageType) {
         case "Place":
+            // store selected data
+            villageSelected=getDataFromField("village")
 
             if (emptyCheckField(stateSelected, "State")) { }
             else if (emptyCheckField(districtSelected, "District")) { }
@@ -319,9 +330,9 @@ function submitFeedbackProblem() {
             }
             break;
         case "Department":
-            dropDownListId = "ministries";
-            let dropdownList = document.getElementById(dropDownListId)
-            ministrySelected = dropdownList.value
+            // store selected data
+            ministrySelected=getDataFromField("ministries")
+
             if (emptyCheckField(ministrySelected, "Ministry")) { }
             else if (emptyCheckField(areaSelected, "Area")) { }
             else if (document.getElementById('departmentInfo').innerHTML.replace(/&nbsp;/g, '').length <= 0) {
@@ -393,6 +404,11 @@ function dataSubmited(url, id) {
 function clearForm() {
     document.getElementById('feedbackProblem').innerHTML = ""
     clearTags()
+}
+
+function getDataFromField(data){
+    let dropdownList = document.getElementById(data)
+    return dropdownList.value
 }
 
 
